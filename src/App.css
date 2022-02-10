@@ -1,38 +1,121 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Red+Hat+Display:wght@300&family=Staatliches&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f7f7;
+  color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #e8e9e9;
+}
+.container .logo {
+  font-family: "Oswald", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
+  font-family: "Staatliches", cursive;
+  font-size: 3rem;
+}
+
+.container .carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.container .carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.container .carousel .item {
+  background: white;
+  margin: 10px;
+  padding: 12px;
+  width: 280px;
+  border-radius: 8px;
+  text-align: center;
+  flex: none;
+}
+
+.container .carousel .item .image img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.container .carousel .item .info {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .carousel .item .info span {
+  display: block;
+  text-align: center;
+  color: #1e1e1e;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container .carousel .item .info .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #00a8fb;
+}
+
+.container .carousel .item .info .oldPrice {
+  text-decoration: line-through;
+  font-size: 0.8rem;
+  flex-grow: 1;
+  color: #e81a5d;
+}
+
+.container .carousel .item .info .price {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 7px 0;
+  background: #5eca44;
+  cursor: pointer;
+}
+.container .carousel .item .info .price:hover {
+  background: #79ce64;
+}
+/* ----- buttons----- */
+
+.container .buttons {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container .buttons button {
+  border: none;
+  margin: 10px 10px;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+  padding: 5px;
+}
+.container .buttons button:hover {
+  background-color: rgb(190, 187, 187);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container .buttons img {
+  height: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scroll-left {
+  transform: rotate(180deg);
 }
